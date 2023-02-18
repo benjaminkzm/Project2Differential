@@ -70,6 +70,8 @@ function c1(u,k,t)
 		dx = k*u
 	end
 
+sol2(t) = 100*exp(1.08t)
+
 # ╔═╡ 7ae4ea05-801d-4da5-be92-77c25ced075e
 begin
 	k = Growth
@@ -114,6 +116,22 @@ md"""
 ### Case 2: Trap-Kill
 In this case, a trap-kill method would be implemented where x amount of traps will be set out throughout town and every cat captured will be euthanized. This method is highly unethical and we do not reccommand it, although it will be an option. We will show the feral colony's population if this method is implemented
 """
+md"""
+### Differential equation:
+$$\frac{dp}{dt} = kP-12$$
+(k is the growth rate and p is the current population of feral cats)
+
+### Analytical solution:
+ $$P(t) = 100e^{1.08t}-12$$
+"""
+# ╔═╡ 9cb1593a-7908-4462-adc0-92c2c86f1144
+function c1(u,k,t)
+		x = u
+		dx = k*u
+	end
+
+sol2(t) = (100*exp(1.08t))-12
+
 
 # ╔═╡ 03594498-0760-4078-8139-1813218229dc
 md"""
